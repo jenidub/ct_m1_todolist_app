@@ -18,13 +18,20 @@ isActive = True
 
 # Functions List
 # - Add tasks
-def add_task():
-    # if task_name:
-    print('adding user added task now...')
+def add_task(task_name):
+    if task_name:
+        task_list.append(task_name.title())
+    else:
+        print("You did not enter a task to add. Please try again. Returning to main menu...")
         
 # - View tasks
 def view_task_list():
-    print(task_list)
+    print("\n##########\n")
+    print("your current to do list:".title())
+    for task in task_list:
+        print(f"* {task}")
+    print("\n##########\n")
+
     
 # - Delete tasks
 def delete_task():
@@ -47,14 +54,15 @@ while isActive:
     task_choice = input("=> Type in one of the following options: [ add | view | delete | quit ]  ").lower()
 
     # Core Features via Function
-    # - Quit the app
+    # - Quit the application
     if task_choice == 'quit':
         isActive = False
         break
     
     # - Add tasks
     elif task_choice == 'add':
-        add_task()
+        new_task = input("What would you like to add to your to-do list?  ")
+        add_task(new_task)
     
     # - View tasks
     elif task_choice == 'view':
@@ -66,12 +74,11 @@ while isActive:
     
     # - Invalid entry
     else:
-        # - Quit the application
-        print('invalid entry. try again')
+        print('Invalid option. Please try again')
 
 # Close Program
 print("\n########## end of program ##########".upper())
-print("\nHere was the final list:")
+print("\nHere are the tasks remaining on your to-do list:")
 print(task_list)
 
 print("\n##########")
