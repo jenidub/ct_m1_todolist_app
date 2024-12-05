@@ -75,4 +75,4 @@ YOUR CURRENT TO DO LIST:
 
 ---
 
-## README file generated with assistance using ChatGPT
+=> README file generated with assistance from [ ChatGPT ]

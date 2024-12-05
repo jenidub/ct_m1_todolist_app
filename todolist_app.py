@@ -57,19 +57,25 @@ def delete_task(task_name):
     """ Else, iterate through task_list to see if the task is in the list """
     """ => if the task is in task_list, delete it from the list and print a confirmation message """
     """ => if the task is not in task_list, print an invalid entry message and return to the main menu """
-
+    print('in delete task...')
     # - Alert the user if they provide invalid input
-    if not task_name:
-        print("You did not enter a task to remove. Returning to main menu...\n")
+    # if not task_name:
+    #     print("You did not enter a task to remove. Returning to main menu...\n")
     
-    else:
+    # else:
+    #     for task in task_list:
+    #         if task_name.lower() in task:
+    #             task_index = task_list.index(task_name)
+    #             del task_list[task_index]
+    #             print(f"Success! You have successfully removed {task.title()} from your to-do list")
+    #             return
+    try:
         for task in task_list:
             if task_name.lower() in task:
                 task_index = task_list.index(task_name)
                 del task_list[task_index]
                 print(f"Success! You have successfully removed {task.title()} from your to-do list")
-                return
-            
+    except:
         # - Alert the user if they try to delete a task that doesn't exist
         # The message occurs if the task is not found during iteration of task_list
         print("Invalid entry. Returning to main menu...\n")        
